@@ -11,19 +11,13 @@ function Home() {
                 </marquee>
             </div>
 
-            <div className="row bg-hero-pattern3 bg-cover bg-fixed">
+            <div>
                 <div className="bg-hero-pattern bg-cover h-[700px] bg-center"/>
-                <div className="col-6 mt-5 mb-5 justify-items-center text-justify">
+                <div className="col-6 mt-3 justify-items-center text-justify">
                     <Text_1 Titulo="BIENVENIDO A STEAM CONSOLAS"
                             Parrafo="¡Bienvenido a steam consolas! 🎮
                                  Aquí encontrarás todo lo que necesitas para disfrutar de la mejor experiencia de juego. Desde las últimas novedades hasta accesorios imprescindibles, tenemos lo que buscas. Navega por nuestra selección, descubre ofertas exclusivas y prepárate para sumergirte en mundos increíbles.
                                  ¡Comienza tu aventura con nosotros hoy mismo!"/>
-                </div>
-                <div className="col-6 mt-5 mb-5 justify-items-center">
-                    <iframe className="rounded w-full h-full" src="https://www.youtube.com/embed/5xOJ6ir8ME0?si=DFQ6x3MstvErde_-"
-                            title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
-                            referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 </div>
             </div>
 

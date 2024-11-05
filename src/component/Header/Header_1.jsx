@@ -1,5 +1,5 @@
 import "./Header.css"
-import logo from "../../../public/steam.svg"
+import logo from "/steam.svg"
 import {Link} from 'react-router-dom';
 
 

@@ -1,8 +1,8 @@
 import "./Footer.css";
-import facebook from "../../../public/facebook.svg";
-import twiter from "../../../public/twitter-x.svg";
-import steam from "../../../public/steam_red.svg";
-import instagram from "../../../public/instagram.svg";
+import facebook from "/facebook.svg";
+import twiter from "/twitter-x.svg";
+import steam from "/steam_red.svg";
+import instagram from "/instagram.svg";
 import {Link} from 'react-router-dom';
 
 const Footer_1 = () => {

@@ -88,7 +88,7 @@
         border: none;
     }
     .boton_menu{
-        background-image: url("../public/icono_menu.png");
+        background-image: url("/icono_menu.png");
         background-color: black;
         background-repeat: no-repeat;
         height: 30px;
@@ -109,7 +109,7 @@
 
     }
     .ponerx{
-        background-image: url("../public/icono_x.png");
+        background-image: url("/icono_x.png");
         background-color: black;
         background-repeat: no-repeat;
         height: 30px;
