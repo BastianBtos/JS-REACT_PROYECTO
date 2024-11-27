@@ -65,7 +65,7 @@ export default function Cart() {
 
 
                         <div className="col-span-1">
-                        <p className=" font-bold pl-8">${totalCost}/USD</p>
+                        <p className=" font-bold pl-8">${item.quantity * item.price}/USD</p>
                         </div>
 
 
