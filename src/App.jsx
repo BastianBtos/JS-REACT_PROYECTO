@@ -9,16 +9,18 @@ import Contact from "./component/Contact/Contact.jsx";
 import Products from "./component/Products/Products.jsx";
 import ItemDetail from "./component/ItemDetail/ItemDetail.jsx";
 import ProductsCategory from "./component/Category/Category.jsx";
+import Cart from "./component/Cart/Cart.jsx";
+import Refresh from "./component/Refresh/Refresh.jsx";
 function App() {
 
   return (
       <>
           <BrowserRouter>
-              <section className="m-[88px]">
-                  <Header/>
-              </section>
+              <Header/>
+              <Refresh/>
               <Routes>
                   <Route path="/" element={<Home/>}/>
+                  <Route path="/cart" element={<Cart/>}/>
                   <Route path='/products/:productId' element={<ItemDetail/>}/>
                   <Route path="/sobrenosotros" element={<About/>}/>
                   <Route path="/historia" element={<History/>}/>
