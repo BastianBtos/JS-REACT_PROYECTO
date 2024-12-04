@@ -1,9 +1,11 @@
 import {useCart} from "../../store/useCart.jsx";
 import {CartItem} from "../CartItem/CartItem.jsx";
 import { MdDelete } from 'react-icons/md'
+import { useNavigate } from 'react-router-dom';
 
 export const Cart = () => {
     const { cartItems, totalPrice, reduceFromCart ,clearCart, deleteFromCart, increaseQuantity} = useCart();
+    const navigate = useNavigate();
     return (
         <div>
             {cartItems.length === 0 ? (
