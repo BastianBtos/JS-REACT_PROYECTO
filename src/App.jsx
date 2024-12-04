@@ -9,7 +9,7 @@ import Contact from "./component/Contact/Contact.jsx";
 import Products from "./component/Products/Products.jsx";
 import ItemDetail from "./component/ItemDetail/ItemDetail.jsx";
 import ProductsCategory from "./component/Category/Category.jsx";
-import Cart from "./component/Cart/Cart.jsx";
+import {Cart} from "./component/Cart/Cart.jsx";
 import Refresh from "./component/Refresh/Refresh.jsx";
 function App() {
 

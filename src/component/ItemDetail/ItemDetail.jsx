@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProductById } from '../../data/asyncMock.jsx';
-import useCart from "../../store/useCart.jsx";
+import {useCart} from "../../store/useCart.jsx";
 import Loading from '../Loading/Loading.jsx';
 
 export default function ItemDetail() {
     const { productId } = useParams();
-    const [quantity, setQuantity] = useState(1);
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
-    const addToCart = useCart((state) => state.addToCart);
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        addToCart(product.id, quantity);
+    };
 
     useEffect(() => {
         getProductById(productId).then((data) => {
@@ -17,6 +20,8 @@ export default function ItemDetail() {
             setLoading(false);
         });
     }, [productId]);
+
+    const [quantity, setQuantity] = useState(1);
 
     const decrementQuantity = () => {
         if (quantity > 1) setQuantity(quantity - 1);
@@ -26,11 +31,7 @@ export default function ItemDetail() {
         if (quantity < product.stock) setQuantity(quantity + 1);
     };
 
-    const handleAddToCart = () => {
-        if (product) {
-            addToCart(product, quantity);
-        }
-    };
+
 
 
     if (loading) {
