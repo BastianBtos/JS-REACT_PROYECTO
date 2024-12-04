@@ -1,6 +1,10 @@
+import {useEffect} from "react";
 import Text_2 from "../Text/Text_2.jsx";
 import Text_1 from "../Text/Text_1.jsx";
 function About() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <>

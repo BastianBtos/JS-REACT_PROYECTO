@@ -26,9 +26,9 @@ const Footer_1 = () => {
                     </div>
                     <div className="sb_footer-links_div">
                         <h4>Compañia</h4>
-                        <Link to="/sobrenosotros" className="hover:scale-110 transition-all duration-500 cursor-pointer text-[white] hover:text-[red]"><p>Sobre nosotros</p></Link>
+                        <Link to="/about" className="hover:scale-110 transition-all duration-500 cursor-pointer text-[white] hover:text-[red]"><p>Sobre nosotros</p></Link>
                         <Link to="/historia" className="hover:scale-110 transition-all duration-500 cursor-pointer text-[white] hover:text-[red]"><p>Historia</p></Link>
-                        <Link to="/contactanos" className="hover:scale-110 transition-all duration-500 cursor-pointer text-[white] hover:text-[red]"><p>Contactanos</p></Link>
+                        <Link to="/contact" className="hover:scale-110 transition-all duration-500 cursor-pointer text-[white] hover:text-[red]"><p>Contacto</p></Link>
                     </div>
                     <div className="sb_footer-links_div">
                         <h4>Nuestras Redes</h4>

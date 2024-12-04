@@ -10,27 +10,25 @@ import Products from "./component/Products/Products.jsx";
 import ItemDetail from "./component/ItemDetail/ItemDetail.jsx";
 import ProductsCategory from "./component/Category/Category.jsx";
 import {Cart} from "./component/Cart/Cart.jsx";
-import Refresh from "./component/Refresh/Refresh.jsx";
 function App() {
 
   return (
-      <>
+      <div className="font-kanit">
           <BrowserRouter>
               <Header/>
-              <Refresh/>
               <Routes>
                   <Route path="/" element={<Home/>}/>
                   <Route path="/cart" element={<Cart/>}/>
                   <Route path='/products/:productId' element={<ItemDetail/>}/>
-                  <Route path="/sobrenosotros" element={<About/>}/>
+                  <Route path="/about" element={<About/>}/>
                   <Route path="/historia" element={<History/>}/>
-                  <Route path="/contactanos" element={<Contact/>}/>
+                  <Route path="/contact" element={<Contact/>}/>
                   <Route path="/productos" element={<Products/>}/>
                   <Route path="/category/:categoryId" element={<ProductsCategory/>}/>
               </Routes>
               <Footer/>
           </BrowserRouter>
-      </>
+      </div>
   )
 }
 

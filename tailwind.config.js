@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        kanit: ['Kanit', 'sans-serif'],
+        ubuntu: ['Ubuntu', 'sans-serif'],
+      },
       backgroundImage: {
         'hero-pattern': "url('/steam_240x300-min_3.jpg')",
         'hero-pattern2': "url('/steam2.jpg')",

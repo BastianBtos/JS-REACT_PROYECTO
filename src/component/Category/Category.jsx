@@ -5,6 +5,9 @@ import ItemList from "../ItemList/Item_list.jsx";
 import Loading from "../Loading/Loading";
 
 export default function ProductsCategory(){
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     const [loading, setLoading] = useState(true);
 
     const [products, setProducts] = useState([]);

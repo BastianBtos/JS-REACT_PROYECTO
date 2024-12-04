@@ -1,5 +1,9 @@
 import Texto_1 from "../Text/Text_1.jsx";
+import {useEffect} from "react";
 function History() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <>
             <div className="bg-hero-pattern bg-cover bg-fixed h-[700px] bg-center"/>
