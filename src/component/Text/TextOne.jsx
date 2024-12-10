@@ -1,5 +1,5 @@
 
-const Text_1 = ({Titulo, Parrafo}) => {
+const TextOne = ({Titulo, Parrafo}) => {
     return(
         <>
             <div className="p-4 rounded p-1 text-center ">
@@ -12,4 +12,4 @@ const Text_1 = ({Titulo, Parrafo}) => {
     )
 }
 
-export default Text_1
+export default TextOne

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProductByCategory } from "../../data/asyncMock";
-import ItemList from "../ItemList/Item_list.jsx";
+import ItemList from "../ItemList/ItemList.jsx";
 import Loading from "../Loading/Loading";
 
 export default function ProductsCategory(){
@@ -21,7 +21,6 @@ export default function ProductsCategory(){
             .finally(() => setLoading(false));
     }, [categoryId]);
 
-
     return(
         <div className="container mx-auto mt-10">
             {loading ?(
@@ -29,7 +28,6 @@ export default function ProductsCategory(){
                     <Loading />
                 </div>
             ):(
-
                 <ItemList products={products}/>
             )}
         </div>

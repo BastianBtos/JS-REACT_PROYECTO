@@ -13,7 +13,7 @@ export default {
       backgroundImage: {
         'hero-pattern': "url('/steam_240x300-min_3.jpg')",
         'hero-pattern2': "url('/steam2.jpg')",
-        'hero-pattern3': "url('/banner2.jpg')",
+        'hero-pattern3': "url('/BannerTwo.jpg')",
       }
     },
   },

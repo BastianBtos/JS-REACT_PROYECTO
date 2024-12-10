@@ -18,6 +18,10 @@ export default function ItemList({products: initialProducts }){
         }
     }, [initialProducts]);
 
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return(
         <>
             {loading ?(

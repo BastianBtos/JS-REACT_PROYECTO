@@ -1,15 +1,31 @@
 import {useCart} from "../../store/useCart.jsx";
 import {CartItem} from "../CartItem/CartItem.jsx";
 import { MdDelete } from 'react-icons/md'
-import { useNavigate } from 'react-router-dom';
-import {useEffect} from "react";
+import {useNavigate, useParams} from 'react-router-dom';
+import {useEffect, useState} from "react";
+import {getProductById} from "../../data/asyncMock.jsx";
+import Loading from "../Loading/Loading.jsx";
 
 export const Cart = () => {
+    const [product, setProduct] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const { productId } = useParams();
     const { cartItems, totalPrice, reduceFromCart ,clearCart, deleteFromCart, increaseQuantity} = useCart();
     const navigate = useNavigate();
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+    useEffect(() => {
+        getProductById(productId).then((data) => {
+            setProduct(data);
+            setLoading(false);
+        });
+    }, [productId]);
+
+    if (loading) {
+        return <div className='container mx-auto max-w-[1170px]'><Loading /></div>;
+    }
+
     return (
         <div>
             {cartItems.length === 0 ? (
@@ -32,22 +48,16 @@ export const Cart = () => {
                     {cartItems.length === 0 ? (
                         <div className="place-items-center content-center text-[white] text-[30px] h-[480px]">
                             <h2 className="uppercase">No hay productos en el carrito</h2>
-                            <img src="https://cdn-icons-png.flaticon.com/512/17568/17568902.png" alt="..."
-                                 className="h-80"/>
-                            <button
-                                className="hover:scale-110 transition-all duration-500 cursor-pointer text-[white] hover:text-[red]"
-                                onClick={() => navigate('/productos')}>Explora Mas
-                            </button>
-
+                            <img src="https://cdn-icons-png.flaticon.com/512/17568/17568902.png" alt="..." className="h-80"/>
+                            <button className="hover:scale-110 transition-all duration-500 cursor-pointer text-[white] hover:text-[red]" onClick={() => navigate('/products')}>Explora Mas</button>
                         </div>
                     ) : (
                         cartItems.map((item) => (
                             <div>
-                                <div key={item.id} className="flex justify-between items-center bg-white p-4 rounded-lg">
+                                <div key={item.id} className="flex text-[white] justify-between items-center bg-[#012E40] p-4 rounded-lg">
                                     <CartItem {...item} />
                                     <button onClick={() => reduceFromCart(item.id)}
                                             className="hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-3 py-1 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800 content-center">
-
                                         -{" "}
                                     </button>
                                     <button onClick={() => deleteFromCart(item.id)}>
@@ -55,7 +65,6 @@ export const Cart = () => {
                                     </button>
                                     <button onClick={() => increaseQuantity(item.id)}
                                             className="hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-3 py-1 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800 content-center">
-
                                         +{" "}
                                     </button>
 

@@ -1,4 +1,4 @@
-import Texto_1 from "../Text/Text_1.jsx";
+import Texto_1 from "../Text/TextOne.jsx";
 import {useEffect} from "react";
 function History() {
     useEffect(() => {
@@ -6,7 +6,7 @@ function History() {
     }, []);
     return (
         <>
-            <div className="bg-hero-pattern bg-cover bg-fixed h-[700px] bg-center"/>
+            <div className="bg-hero-pattern3 bg-cover bg-fixed h-[700px] bg-center"/>
             <div className="text-justify">
                 <Texto_1 Titulo="Nuestra historia" Parrafo="Steam es una plataforma que ha marcado un antes y un después en mi experiencia como gamer. Desde su lanzamiento en 2003 por Valve Corporation, he sido testigo de su evolución y de cómo se ha convertido en un verdadero referente en el mundo de los videojuegos. Al principio, Steam se diseñó para facilitar las actualizaciones de juegos como Counter-Strike, pero rápidamente se expandió, y yo me di cuenta de que estaba ante algo mucho más grande.
                 Recuerdo que, al principio, la plataforma tuvo sus altibajos. Hubo momentos en que enfrentaba problemas de conexión y errores que hacían que la experiencia fuera frustrante. Sin embargo, Valve estaba comprometido a mejorar, y poco a poco, Steam se volvió más estable y eficiente. Con el tiempo, la oferta de juegos creció exponencialmente, y eso realmente me emocionó. Podía encontrar desde los grandes títulos de estudio hasta joyas indie que nunca hubiera descubierto de otra manera.

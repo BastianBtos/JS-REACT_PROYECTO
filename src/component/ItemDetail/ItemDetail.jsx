@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProductById } from '../../data/asyncMock.jsx';
 import {useCart} from "../../store/useCart.jsx";
+import { FaPlane } from "react-icons/fa";
+import { FaCreditCard } from "react-icons/fa6";
 import Loading from '../Loading/Loading.jsx';
 
 export default function ItemDetail() {
@@ -35,9 +37,6 @@ export default function ItemDetail() {
         if (quantity < product.stock) setQuantity(quantity + 1);
     };
 
-
-
-
     if (loading) {
         return <div className='container mx-auto max-w-[1170px]'><Loading /></div>;
     }
@@ -63,16 +62,17 @@ export default function ItemDetail() {
 
                     <div className="lg:col-span-2 lg:row-span-2 lg:row-end-2">
                         <h1 className="sm: text-2xl font-bold text-[white] sm:text-3xl uppercase">{product.name}</h1>
-                        <div
-                            className="mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
+                        <div className=" justify-content-center mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
                             <div className="flex items-end">
                                 <h1 className="text-3xl font-bold text-[white]">${product.price} USD</h1>
                                 <span className="text-base text-[white]">/Precio Unidad</span>
                             </div>
                         </div>
                         <div>
-                            <div className='flex text-[white] mt-3 mb-3 font-bold items-center'>
-                                <h1 className="mr-3 text-[20px]">Stock:{product.stock}</h1>
+                            <div className="mt-4 justify-content-center flex">
+                                <h1 className="text-[white] font-bold text-[20px]">Stock:{product.stock}</h1>
+                            </div>
+                            <div className='justify-content-center flex text-[white] mt-3 mb-3 font-bold items-center'>
                                 <button onClick={decrementQuantity}
                                         className='hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-3 py-1 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800 content-center'> -
                                 </button>
@@ -82,25 +82,25 @@ export default function ItemDetail() {
                                 </button>
                             </div>
                         </div>
-                        <div
-                            className="mt-10 flex flex-col items-center justify-between space-y-4 border-t py-4 sm:flex-row sm:space-y-0">
-                            <div className="flex items-center">
+                        <div className="justify-content-center mt-10 flex flex-col items-center justify-between space-y-4 border-t py-4 sm:flex-row sm:space-y-0">
+                            <div className=" flex items-center">
                                 <h1 className="text-3xl font-bold text-[white]">${product.price * quantity} USD</h1>
                                 <span className="text-base text-[white]">/Precio Total</span>
+                                <button type="button" onClick={handleAddToCart}
+                                        className="mx-2 hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800 content-center">
+                                    Añadir al Carro
+                                </button>
                             </div>
                         </div>
-                        <button type="button" onClick={handleAddToCart}
-                                className="hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800 content-center">
-                            Añadir al Carro
-                        </button>
-
 
                         <ul className="mt-8 space-y-2 ">
                             <li className="flex items-center text-left text-sm font-medium text-[white]">
+                                <FaPlane />
                                 Envío gratuito al mundo
                             </li>
 
                             <li className="flex items-center text-left text-sm font-medium text-[white]">
+                                <FaCreditCard />
                                 Cancela con Cualquier Metodo
                             </li>
                         </ul>
